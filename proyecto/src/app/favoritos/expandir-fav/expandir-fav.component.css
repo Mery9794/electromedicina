@@ -1,0 +1,104 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: visible;
+    /* Este valor se cambió de hidden a visible */
+    opacity: 1;
+    /* Este valor se cambió de 0 a 1 */
+}
+
+#popup:target {
+    visibility: hidden;
+    /* Se regresa a hidden para ocultar */
+    opacity: 0;
+    /* Se regresa a o para hacerlo "invisible" */
+}
+
+#popupBody {
+    width: 85%;
+    box-shadow: 0 0 5px #CCC;
+    background: #FFF;
+    position: relative;
+    margin: 10% auto;
+    transition: all 5s ease-in-out;
+}
+
+#cerrar {
+    position: absolute;
+    top: -2px;
+    right: 18px;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #F00;
+    transition: all 200ms;
+}
+
+:host {
+    z-index: 1000;
+}
+form#popupBody {
+    color: black;
+}
+
+
+
+/* Estilo para el encabezado de la tarjeta (nombre y apellido) */
+.nombre-apellido {
+    background-color: #bbb9b9;
+    /* Fondo gris para nombre y apellido */
+    padding: 8px;
+    /* Espacio alrededor del texto */
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+  .dato1  {
+    display: flex; 
+    margin-bottom: 10px;
+    flex-direction: column;
+    width: 140px;
+    margin-right: auto; /* Alinea al margen derecho */
+  }
+  
+ .dato2{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 140px;
+    margin-left: auto; /* Alinea al margen derecho */
+  }
+
+  .dato1, .dato2 {
+    flex: 1; 
+    padding: 10px; /* Espacio alrededor del texto */
+    margin-top: 10px; /* Espacio entre las secciones */
+  }
+
+.p{
+    display: flex;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+   }
+   
+   .dato3 {
+    width: 80%;
+    height: 80%;
+   }
+   
+   #grafico {
+    width: 100%;
+    height: 100%;
+   }
+  

@@ -1,0 +1,113 @@
+/* Estilos para los campos de entrada */
+.w3-input {
+    border: none;
+    /* Elimina el borde del campo de entrada */
+    border-bottom: 1px solid #ccc;
+    /* Agrega una línea inferior para el efecto deseado */
+    padding: 10px;
+    /* Añade espacio para el texto dentro del campo */
+    margin-bottom: 15px;
+    /* Espaciado inferior entre campos */
+    width: 100%;
+    /* Ocupa todo el ancho disponible */
+}
+
+/* Estilos para los labels */
+.w3-text-blue {
+    color: #2196F3;
+    /* Cambia el color del label al deseado */
+}
+
+/* Estilos para la imagen */
+.card-body img {
+
+    max-width: 100%;
+    /* Ajustar la imagen al tamaño del contenedor */
+    height: auto;
+    /* Mantener la proporción de aspecto de la imagen */
+
+}
+
+/* Estilos para el contenedor del formulario */
+.card-body {
+    overflow: hidden;
+    /* Hace que el contenedor se ajuste automáticamente a la altura de los elementos flotantes */
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    --bs-card-spacer-y: -1rem;
+}
+
+.row {
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+
+/* Ajustar el margen izquierdo del contenedor */
+
+
+.flex-container {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.d-block.w-100 {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (min-width: 668px) {
+    .container {
+        flex-direction: row;
+    }
+}
+
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: visible;
+    /* Este valor se cambió de hidden a visible */
+    opacity: 1;
+    /* Este valor se cambió de 0 a 1 */
+}
+
+#popup:target {
+    visibility: hidden;
+    /* Se regresa a hidden para ocultar */
+    opacity: 0;
+    /* Se regresa a o para hacerlo "invisible" */
+}
+
+#popupBody {
+    width: 50%;
+    padding: 3%;
+    border-radius: 15px;
+    box-shadow: 0 0 5px #CCC;
+    background: #FFF;
+    position: relative;
+    margin: 10% auto;
+    transition: all 5s ease-in-out;
+}
+
+#cerrar {
+    position: absolute;
+    top: -2px;
+    right: 18px;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #F00;
+    transition: all 200ms;
+}

@@ -1,0 +1,17 @@
+<div class="navbar">
+    <div class="navbar-brand">
+      <h1>Bienvenido</h1> 
+    </div>
+    <div id="top_menu" class="slotlet slotlet_horizontal_menu">
+      <div class="navbar-links">
+        <button class="nav-button" [routerLink]="['/inicio']" [ngClass]="{'active': botonActivo === 'inicio'}"
+          (click)="cambiarBotonActivo('inicio')">Inicio</button>
+        <button class="nav-button" [routerLink]="['/info']" [ngClass]="{'active': botonActivo === 'info'}"
+          (click)="cambiarBotonActivo('info')">Información para pacientes</button>
+        <button class="nav-button" [routerLink]="['/pacientes']" [ngClass]="{'active': botonActivo === 'pacientes'}"
+          (click)="cambiarBotonActivo('pacientes')">Portal de pacientes</button>
+        <button class="nav-button" [routerLink]="['/medicos']" [ngClass]="{'active': botonActivo === 'medicos'}"
+          (click)="cambiarBotonActivo('medicos')">Sitio médico</button>
+      </div>
+    </div>
+  </div>

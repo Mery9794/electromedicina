@@ -1,0 +1,32 @@
+<div class="pacientes-favoritos-container">
+    <h4>Pacientes Favoritos:</h4>
+    <ul>
+      <li *ngFor="let paciente of pacientesFavoritos">
+        <div class="paciente-card">
+  
+          <div class="nombre-apellido">
+            <p>{{ paciente.pacienteNombre }} {{ paciente.pacienteApellido }}</p>
+            <p>DNI: {{ paciente.pacienteDni }} </p>
+          </div>
+          <div class="informacion1">
+            <p>mmHg {{ paciente.dato }} </p>
+            <h2>{{ paciente.valor }}/{{ paciente.valor }} </h2>
+          </div>
+          <div class="informacion2">
+            <p>Temperatura {{ paciente.dato }}</p>
+            <h1>{{ paciente.valor }}.0°</h1>
+          </div>
+          <div class="informacion3">
+            <p>ppm {{ paciente.dato }}</p>
+            <h2>{{ paciente.valor }}</h2>
+          </div>
+  
+          <div>
+            <button class="expandir" (click)="expandirVentanaFlotante(paciente)">expandir button</button>
+            <app-expandir-fav *ngIf="ventanaFlotanteVisible && pacienteSeleccionado === paciente" [paciente]="paciente" ></app-expandir-fav>
+          </div>
+  
+        </div>
+      </li>
+    </ul>
+  </div>

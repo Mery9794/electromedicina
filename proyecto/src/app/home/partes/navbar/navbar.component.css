@@ -1,0 +1,66 @@
+/* Estilos para la barra de navegación */
+.navbar {
+    background-color: #293849 ;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column; /* Cambiar el flujo a columna */
+    align-items: flex-start; /* Alinear al borde izquierdo */
+    color: #fff;
+    margin: 0; /* Elimina los márgenes predeterminados */
+  }
+  
+  /* Estilos para el logotipo o título */
+  .navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-left: 10px; /* Agregar un margen izquierdo para separar del borde izquierdo */
+    color: #fff; /* Texto en color blanco */
+  }
+  
+  /* Estilos para la barra de bienvenida */
+  .navbar-welcome {
+    background-color: #293849 ; /* Fondo azul */
+    color: #fff; /* Texto en color blanco */
+    padding: 10px;
+    margin-left: 10px; /* Agregar margen izquierdo para separar del borde izquierdo */
+  } 
+  
+  /* Estilos para la barra de botones */
+  .slotlet.slotlet_horizontal_menu {
+    padding: 0;
+    margin: 0;
+    width: 100%; /* Ocupar todo el ancho de la pantalla */
+  }
+  .navbar-links {
+    background-color: #ddffff; /* Fondo celeste */
+    display: flex;
+    flex-direction: row; /* Cambiar el flujo a fila para los botones */
+  }
+  
+  /* Estilos para los botones de navegación */
+  .nav-button {
+    background-color: #ddffff; /* Fondo celeste predeterminado */
+    color: #000; /* Texto en color negro predeterminado */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Transición suave para el cambio de color de fondo */
+  }
+  
+  /* Estilos para los botones de navegación cuando se pasa el mouse sobre ellos */
+  .nav-button:hover {
+    background-color: #6ec0c0; /* Fondo celeste más claro al pasar el mouse */
+  }
+  
+  /* Estilos para los botones de navegación cuando están activos (seleccionados) */
+  .nav-button.active {
+    background-color: #779b9b; /* Fondo celeste más oscuro para el botón activo */
+    color: #fff; /* Texto en color blanco para el botón activo */
+  }
+  
+  /* Estilos para los botones de navegación activos cuando se pasa el mouse sobre ellos */
+  .nav-button.active:hover {
+    background-color: #6ec0c0; /* Fondo aún más oscuro al pasar el mouse sobre el botón activo */
+  }

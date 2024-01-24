@@ -1,0 +1,71 @@
+<!-- expandir-favoritos -->
+<div class="contenido-ventana-flotante">
+
+    <div class="w3-modal-content">
+        <div class="overlay" id="popup">
+
+            <form action="" id="popupBody">
+
+                <div class="nombre-apellido">
+                    <p>{{ paciente.pacienteNombre }} {{ paciente.pacienteApellido }}</p>
+                    <p>DNI: {{ paciente.pacienteDni }} </p>
+                </div>
+
+                <span class="cerrar" id="cerrar" (click)="cerrarVentanaFlotante()">&times;</span>
+                <div class="container" style="display: flex;">
+
+                    <div class="dato1">
+                        <div id="informacion">
+                            <br>
+                            <hr style="border-color: black;">
+                            <p>Edad: </p>
+                            <hr style="border-color: black;">
+                            <p>Sexo:</p>
+                            <hr style="border-color: black;">
+                            <p>Teléfono:</p>
+                            <hr style="border-color: black;">
+                            <p>Contacto:</p>
+                            <hr style="border-color: black;">
+                            <p>Observaciones:</p>
+                            <hr style="border-color: black;">
+                        </div>
+                    </div>
+
+                    <div class="dato2">
+                        <div id="temperatura">
+                            <hr style="border-color: black;">
+                            <p class="w3-tiny w3-center">Temperatura</p>
+                            <p class="w3-xlarge w3-center">°</p>
+                            <hr style="border-color: black;">
+                        </div>
+
+                        <div id="mmHg">
+                            <hr style="border-color: black;">
+                            <p class="w3-tiny w3-center">mmHg</p>
+                            <hr style="border-color: black;">
+                        </div>
+
+                        <div id="ppm">
+                            <hr style="border-color: black;">
+                            <p class="w3-tiny w3-center">ppm</p>
+                            <hr style="border-color: black;">
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <div class="dato3">
+                            <br>
+                            <br>
+                            <div id="grafico">
+                                <canvas #canvas id="label" width="400" height="360"
+                                    style="border: 1px solid #000000;"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

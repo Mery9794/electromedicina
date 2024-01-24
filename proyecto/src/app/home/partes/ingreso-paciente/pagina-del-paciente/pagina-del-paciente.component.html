@@ -1,0 +1,59 @@
+<!-- Agrega un contenedor principal para todo el contenido -->
+<div class="w3-container">
+    <!-- Barra azul superior -->
+    <div class="w3-bar w3-blue d-flex justify-content-between">
+        <h1 class="w3-bar-item w3-left">Paciente: </h1>
+        <h3 class="w3-bar-item w3-right">{{ saludo }}</h3>
+    </div>
+ 
+    <!-- Contenedor para los botones y detalles -->
+    <div class="w3-container w3-margin-top">
+        <!-- Panel de navegación -->
+        <div class="w3-sidebar w3-bar-block w3-pale-blue w3-card" style="width:130px">
+            <button class="w3-bar-item w3-button tablink" (click)="mostrarContenido('inicioPaciente')">Inicio
+                <i class="fas fa-home"></i></button>
+            <button class="w3-bar-item w3-button tablink" (click)="mostrarContenido('vivo')">Vivo
+                <i class="fas fa-video"></i>
+                <i class="fas fa-play-circle"></i></button>
+            <button class="w3-bar-item w3-button tablink" (click)="mostrarContenido('notas')">Notas
+                <i class="fas fa-notes-medical"></i></button>
+            <button class="w3-bar-item w3-button tablink" (click)="mostrarContenido('ecg')">Ecg
+                <i class="fas fa-heartbeat"></i></button>
+            <button class="w3-bar-item w3-button tablink" (click)="mostrarContenido('historial')">Historial
+                <i class="fas fa-briefcase-medical"></i></button>
+            <button class="w3-bar-item w3-button" (click)="cerrarSesion()">Salir</button>
+
+        </div>
+
+
+        <!-- Contenido de las pestañas -->
+        <div class="w3-container sec">
+            <h2>{{ titulo }}</h2>
+            <ng-container *ngIf="contenidoVisible === 'inicioPaciente'">
+                <p>Usted se encuentra en la página de inicio.</p>
+                <p>A la izquierda verá un panel de navegación con el cual podrá acceder a los sitios de nuestra página.
+                </p>
+                <p>Vivo: Dentro de esta pestaña usted podrá visualizar los signos vitales de frecuencia cardíaca,
+                    temperatura corporal y presión sanguínea.</p>
+                <p>Notas: Dentro de esta pestaña usted podrá dejar registrado cualquier tipo de información indispensble
+                    a la que podrá acceder en otro momento y desde cualquier dispositivo.</p>
+                <p>Ecg: Dentro de esta pestaña usted podrá visualizar un electrocardiograma del paciente de las últimas
+                    24 Hs.</p>
+                <p>Historial: Dentro de esta pestaña usted podrá visualizar un registro de los valores tomados al
+                    paciente en un rango de las últimas 24 Hs.</p>
+            </ng-container>
+            <ng-container *ngIf="contenidoVisible === 'vivo'">
+                <p>Contenido de la pestaña "Vivo."</p>
+            </ng-container>
+            <ng-container *ngIf="contenidoVisible === 'notas'">
+                <p>Contenido de la pestaña "Notas."</p>
+            </ng-container>
+            <ng-container *ngIf="contenidoVisible === 'ecg'">
+                <p>Contenido de la pestaña "Ecg."</p>
+            </ng-container>
+            <ng-container *ngIf="contenidoVisible === 'historial'">
+                <p>Contenido de la pestaña "Historial."</p>
+            </ng-container>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+<div class="lista">
+    <div class="boton">
+  
+      <h2>Lista de Pacientes</h2>
+      <button class="bot" (click)="showList()"><i class="fa-solid fa-plus" style="color: #3c9a87;"></i></button>
+    </div>
+  
+    <ul *ngIf="showPatientList">
+  
+      <div class="tabla">
+        <table>
+          <tr>
+            <th class="col-md-2"> Nombre y Apellido </th>
+            <th class="col-md-2"> Edad </th>
+            <th class="col-md-2"> Temperatura </th>
+            <th class="col-md-2"> Contacto </th>
+            <th class="col-md-2"><i class="fa-solid fa-user-plus" style="color: #3c9a87;"></i></th>
+          </tr>
+        </table>
+      </div>
+  
+      <li *ngFor="let paciente of pacientes">
+  
+        <div class="col-md-2">{{paciente.apellido}} {{paciente.nombre}}</div>
+        <div class="col-md-2"> {{paciente.edad}}</div>
+        <div class="col-md-2"> {{paciente.dato}}{{paciente.valor}}</div>
+        <div>
+          <div *ngIf="ventanaFlotanteVisible && pacienteSeleccionado === paciente">
+  
+            <div class="overlay" id="popup">
+              <form action="" id="popupBody">
+                <span class="cerrar" id="cerrar" (click)="cerrarVentanaFlotante()">&times;</span>
+  
+                <div class="container">
+                  <p class="cp">Contacto del paceinte:</p>
+                  <div>Email: {{paciente.email}}</div>
+                  <div>Teléfono: {{paciente.telefono}}</div>
+                </div>
+  
+              </form>
+            </div>
+          </div>
+  
+          <button class="bot2"  type="submit" (click)="expandirVentanaFlotante(paciente)">Datos Contacto</button>
+  
+        </div>
+  
+        <button class="bot2" type="submit" (click)="addFavoritos(paciente)">Agregar a Favoritos</button>
+  
+      </li>
+  
+    </ul>
+  </div>

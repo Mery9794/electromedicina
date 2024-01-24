@@ -1,0 +1,57 @@
+.cuadrosPc {
+
+    /* Establece la imagen como fondo */
+    text-align: center;
+    /* Centra el contenido verticalmente y horizontalmente */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  
+  .Inicio {
+    padding: 20px;
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+  
+  .flex-container-paciente2,
+  app-add-favs {
+    justify-content: space-between;  /* Puedes ajustar esto según sea necesario */
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: 20px;  /* Ajusta el relleno según sea necesario */
+    box-sizing: border-box;
+  }
+  app-add-favs {
+    top: 170px;
+    z-index: 1;  /* Asegura que esté sobre la imagen */
+    
+  }
+  
+  .flex-container-paciente2 {
+    top: 0;
+    display: flex;
+  }
+  
+  /* Estilos para los cuadros de contenido */
+  .card {
+    background: rgba(255, 255, 255, 0.8);
+    /* Fondo blanco transparente para los cuadros */
+    border: 1px solid #ccc;
+    /* Borde alrededor de los cuadros */
+    margin: 10px;
+    /* Espaciado entre los cuadros */
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    color: rgb(8, 8, 8);
+  }
+  
+  .d-block.w-100{
+    width: 100%;
+    height: auto;
+  }
+  
+  
+  

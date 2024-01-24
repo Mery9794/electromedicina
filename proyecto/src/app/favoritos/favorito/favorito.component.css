@@ -1,0 +1,84 @@
+/* Estilo para el contenedor de la tarjeta de paciente */
+.paciente-card {
+    background: #007bff; /* Fondo azul */
+    width: 300px;
+    display: inline-block;
+    margin: auto;
+    position: relative;
+    text-align: center;
+    box-shadow: -1px 15px 30px -12px black;
+    z-index: 9999;
+    color: #fff; /* Texto blanco */
+   
+  }
+  
+  h4{
+    padding-top: 5px;
+  }
+  li {
+    width: 320px;
+    padding-top: 10px;
+  
+  }
+  
+  /* Estilo para el encabezado de la tarjeta (nombre y apellido) */
+  .nombre-apellido {
+    background-color: #bbb9b9;
+    /* Fondo gris para nombre y apellido */
+    padding: 8px;
+    /* Espacio alrededor del texto */
+    display: flex;
+    justify-content: space-between;
+    color: #000000;
+  }
+  p {
+      margin-top: 5px; 
+      margin-bottom: 5px;
+  
+  }
+  .informacion1, .informacion3  {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 140px;
+    margin-left: auto; /* Alinea al margen derecho */
+    margin-bottom: 10px;
+  }
+  
+  .informacion2{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 140px;
+    margin-right: auto; /* Alinea al margen derecho */
+  }
+   
+  
+  button.expandir {
+    background-color: #404142; /* Botón */
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    width: 100%; /* Abarca el ancho completo */
+  }
+   
+  .informacion1, .informacion2, .informacion3 {
+    flex: 1; 
+    padding: 10px; /* Espacio alrededor del texto */
+    border-top: 1px solid #fff; /* Línea arriba de cada sección */
+    border-bottom: 1px solid #fff; /* Línea abajo de cada sección */
+    margin-top: 10px; /* Espacio entre las secciones */
+  }
+  ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .paciente-card {
+    z-index: 1;
+   }
+   .w3-container.w3-border.w3-padding.w3-margin-bottom {
+    z-index: 2;
+   }

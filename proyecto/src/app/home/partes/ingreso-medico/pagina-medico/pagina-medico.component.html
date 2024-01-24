@@ -1,0 +1,52 @@
+<!-- Agrega un contenedor principal para todo el contenido -->
+<div class="w3-container">
+    <!-- Barra azul superior -->
+    <div class="w3-bar w3-blue d-flex justify-content-between">
+      
+      <h1 class="w3-bar-item1 w3-left" >Profesional: {{ usuario.apellido }}, {{ usuario.nombre }}</h1>
+      <h3 class="w3-bar-item1 w3-right">{{ saludo }}</h3>
+    </div>
+  
+    <!-- Botones de Navegación -->
+    <div class="container">
+      <div class="left-buttons">
+        <button class="nav-button" [ngClass]="{'active': botonActivo === 'Inicio'}" (click)="cambiarPestana('Inicio')">Inicio
+          <i class="fas fa-home"></i>
+        </button>
+        <button class="nav-button" [ngClass]="{'active': botonActivo === 'Favoritos'}" (click)="cambiarPestana('Favoritos')">Favoritos
+          <i class="fas fa-star"></i>
+        </button>
+        <button class="nav-button" [ngClass]="{'active': botonActivo === 'Mapeo'}" (click)="cambiarPestana('Mapeo')">Mapeo
+          <i class="fa-solid fa-map-location-dot"></i>
+        </button>
+        <button class="nav-button" [ngClass]="{'active': botonActivo === 'Información'}" (click)="cambiarPestana('Información')">Información
+          <i class="fas fa-info-circle"></i>
+        </button>
+      </div>
+  
+      <div class="right-buttons">
+        <div class="input-button-container">
+          <input [(ngModel)]="searchTerm" name="Busqueda" id="busqueda" type="text" class="w3-bar-item2 w3-input"
+            placeholder="Search...">
+          <button class="w3-bar-item w3-button tablink" (click)="buscar()"> Buscar
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+        <button class="w3-bar-item w3-button tablink w3-right" (click)="cerrarSesion()">Cerrar
+          <i class="fas fa-sign-out-alt"></i>
+        </button>
+      </div>
+    </div>
+  
+    <!-- Visualización de las pestañas -->
+    <div id="Inicio" class="w3-container sec" [style.display]="pestanasVisible.Inicio ? 'block' : 'none'">
+      <app-home-medico></app-home-medico>
+    </div> 
+  
+    <div id="Favoritos" class="w3-container sec" [style.display]="pestanasVisible.Favoritos ? 'block' : 'none'">
+      <app-favorito></app-favorito>
+    </div>
+  
+    <div id="Mapa" class="w3-container sec" [style.display]="pestanasVisible.Mapeo ? 'block' : 'none'">
+      <app-ubicacion></app-ubicacion>
+    </div>
