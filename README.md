@@ -1,27 +1,41 @@
 # Electromedicina
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
+Electromedicina es una aplicación web desarrollada con Angular CLI (versión 17.3.7) y diseñada para facilitar la gestión de datos médicos. La aplicación permite administrar pacientes, profesionales de salud y métricas de signos vitales, ofreciendo funcionalidades avanzadas para monitoreo de información médica.
 
-## Development server
+## Funcionalidades principales
+La aplicación cuenta con tres sectores principales:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1. **Sector Médico:** Los profesionales de la salud pueden iniciar sesión para gestionar sus pacientes, registrarlos, ver métricas de signos vitales y asignar o reasignar pacientes según sea necesario.
+2. **Sector Paciente:** Los pacientes pueden ver su información médica, que se sincroniza automáticamente con el sistema.
+3. **Sector Administrador:** Los administradores tienen un panel donde pueden gestionar tanto a médicos como a pacientes, visualizando estadísticas generales y realizando operaciones de alta y baja de profesionales de salud.
+Servidor de desarrollo
 
-## Code scaffolding
+Para iniciar el servidor de desarrollo, se ejecuta ng serve en la terminal y luego se navega a http://localhost:4200/ en el navegador. La aplicación se recargará automáticamente al realizar cambios en los archivos fuente, facilitando el desarrollo y las pruebas.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Construcción del proyecto
+Se ejecuta ng build para compilar el proyecto. Los archivos generados se guardarán en el directorio dist/, listos para su despliegue en un entorno de producción.
 
-## Build
+Descripción de los módulos y servicios implementados
+Servicios de Autenticación y Gestión de Datos Médicos
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **El servicio de autenticación (AuthService) permite:**
+- Validar las credenciales de acceso de los profesionales de salud.
+- Gestionar la información de usuarios registrados en la base de datos.
+- Asignar pacientes a médicos y actualizar métricas de signos vitales.
+- Registro de Pacientes y Vinculación con Profesionales
+- En el componente registro-paciente.component.ts, se implementó un formulario para registrar a los pacientes, captando información personal y médica. 
 
-## Running unit tests
+- **Este formulario:**
+- Valida los datos antes de enviarlos.
+- Genera un nuevo ID de paciente en la base de datos.
+- Almacena tanto el perfil del paciente como las métricas iniciales de signos vitales.
+- Vincula al paciente con un profesional de salud para seguimiento.
+- Autenticación de Médicos e Ingreso al Panel
+- En el componente ingreso-medico.component.ts, se ofrece una interfaz para autenticar a los profesionales de salud. Dependiendo del tipo de usuario (médico o administrador), se redirige al panel correspondiente. También se puede registrar un nuevo médico mediante un formulario específico.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- **Visualización en el Mapa**
+La aplicación incluye una sección de mapa donde se visualizan las ubicaciones de los pacientes registrados. La ubicación inicial representa el área donde fueron registrados, pero se actualizará automáticamente cuando se reciban datos de sensores. Esto permite monitorear la ubicación en tiempo real de cada paciente a través de dispositivos ESP32 conectados a sensores que miden temperatura, presión y niveles de oxígeno. Los datos de estos sensores se sincronizan con la aplicación, mostrando la última ubicación del paciente en el mapa en función de las lecturas de los dispositivos médicos.
 
-## Running end-to-end tests
+## Notas finales
+El proyecto Electromedicina se encuentra en constante desarrollo, integrando nuevas funcionalidades para mejorar la experiencia del usuario y la administración de datos médicos.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
