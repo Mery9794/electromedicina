@@ -1,0 +1,96 @@
+<div class="w3-container">
+
+    <!-- Barra azul superior -->
+    <div class="w3-bar w3-blue d-flex justify-content-between desktop-bar">
+      <h1 class="w3-bar-item1 w3-left">Administrador</h1>
+      <h3 class="w3-bar-item1 w3-right">{{ saludo }}</h3>
+    </div>
+  
+    <!-- Botones de pc -->
+    <div class="container">
+      <div class="left-buttons">
+        <!-- Botones para cambiar entre pestañas -->
+        <button class="nav-button" [ngClass]="{'active': botonActivo === 'Inicio'}" (click)="cambiarPestana('Inicio')">
+          Pacientes <i class="fas fa-users"></i>
+        </button>
+        <button class="nav-button" [ngClass]="{'active': botonActivo === 'Medicos'}" (click)="cambiarPestana('Medicos')">
+          Médicos <i class="fas fa-user-md"></i>
+        </button>
+        <button class="nav-button" [ngClass]="{'active': botonActivo === 'GruposMedicos'}"
+          (click)="cambiarPestana('GruposMedicos')">
+          Grupos Médicos <i class="fas fa-users"></i>
+        </button>
+      </div>
+  
+      <!-- Área de ajustes -->
+      <div class="right-buttons">
+  
+        <div class="dropdown">
+          <!-- Ícono de usuario -->
+          <button id="user-menu-toggle" class="btn dropdown-toggle" data-toggle="dropdown" aria-label="Menú de usuario"
+            (click)="toggleUserMenu()">
+            <i class="fas fa-user"></i>
+          </button>
+  
+          <!-- Contenido del menú del usuario -->
+          <div id="user-action-menu" class="dropdown-menu dropdown-menu-right" [ngClass]="{'show': userMenuVisible}">
+  
+            <button class="boton" [ngClass]="{'active': botonActivo === 'Perfil'}" (click)="cambiarPestana('Perfil')">
+              Perfil <i class="fas fa-user"></i>
+            </button>
+  
+            <div class="dropdown-divider"></div>
+  
+            <button class="boton" [ngClass]="{'active': botonActivo === 'Agendas'}"(click)="cambiarPestana('Agendas')">
+              Agendas <i class="far fa-calendar-alt"></i>
+            </button>
+  
+            <div class="dropdown-divider"></div>
+  
+            <button class="boton" [ngClass]="{'active': botonActivo === 'Informes'}"(click)="cambiarPestana('Informes')">
+              Informes <i class="far fa-file-alt"></i>
+            </button>
+  
+            <div class="dropdown-divider"></div>
+            
+            <button class="boton" [ngClass]="{'active': botonActivo === 'Administradores'}"(click)="cambiarPestana('Administradores')">
+              Administradores <i class="fas fa-user-cog"></i>
+            </button>
+  
+            <!-- Botón para cerrar sesión -->
+            <div class="dropdown-divider"></div>
+            <button class="w3-bar-item w3-button tablink w3-right" (click)="cerrarSesion()">Cerrar
+              <i class="fas fa-sign-out-alt"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  
+    <!-- Visualización de las pestañas -->
+  
+    <div id="Inicio" class="w3-container sec" [style.display]="pestanasVisible.Inicio ? 'block' : 'none'">
+      <app-pacientes></app-pacientes>
+    </div>
+    <div id="Medicos" class="w3-container sec" [style.display]="pestanasVisible.Medicos ? 'block' : 'none'">
+      <app-medicos></app-medicos>
+    </div>
+  
+    <div id="Perfil" class="w3-container sec" [style.display]="pestanasVisible.Perfil ? 'block' : 'none'">
+      <app-perfil></app-perfil>
+    </div>
+    <div id="Agendas" class="w3-container sec" [style.display]="pestanasVisible.Agendas ? 'block' : 'none'">
+      <app-agendas></app-agendas>
+    </div>
+    <div id="Informes" class="w3-container sec" [style.display]="pestanasVisible.Informes ? 'block' : 'none'">
+      <app-informes></app-informes>
+    </div>
+    <div id="Administradores" class="w3-container sec" [style.display]="pestanasVisible.Administradores ? 'block' : 'none'">
+      <app-administrador></app-administrador>
+    </div>
+    <div id="GruposMedicos" class="w3-container sec" [style.display]="pestanasVisible.GruposMedicos ? 'block' : 'none'">
+      
+    </div>
+  
+  </div>

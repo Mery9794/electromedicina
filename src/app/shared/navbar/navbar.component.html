@@ -1,0 +1,25 @@
+<div class="navbar">
+  <div id="top_menu" class="slotlet slotlet_horizontal_menu">
+    <div class="navbar-links" [ngClass]="{'admi': botonActivo === 'admi', 'medicos': botonActivo === 'medicos', 'pacientes': botonActivo === 'pacientes'}">
+      <h1 *ngIf="!botonActivo">Bienvenido al Hospital Electromedicina</h1>
+      <h1 *ngIf="botonActivo === 'admi'"><i class="fas fa-user-shield"></i> Portal Administrativo</h1>
+      <h1 *ngIf="botonActivo === 'medicos'"><i class="fas fa-user-md"></i> Portal Médico</h1>
+      <h1 *ngIf="botonActivo === 'pacientes'"><i class="fas fa-procedures"></i> Portal Paciente</h1>
+    </div>
+  </div>
+  <!-- Botones de selección de iconos -->
+  <div class="icon-selector" [ngClass]="{'small-icons': botonActivo}">
+    <div class="nav-item" [routerLink]="['/administrador']" [ngClass]="{'active': botonActivo === 'admi', 'hidden': botonActivo === 'admi'}" (click)="cambiarBotonActivo('admi')">
+      <button class="nav-button admi"><i class="fas fa-user-shield fa-4x"></i></button>
+      <span>Portal Administrativo</span>
+    </div>
+    <div class="nav-item" [routerLink]="['/medicos']" [ngClass]="{'active': botonActivo === 'medicos', 'hidden': botonActivo === 'medicos'}" (click)="cambiarBotonActivo('medicos')">
+      <button class="nav-button medicos"><i class="fas fa-user-md fa-4x"></i></button>
+      <span>Portal Médico</span>
+    </div>
+    <div class="nav-item" [routerLink]="['/pacientes']" [ngClass]="{'active': botonActivo === 'pacientes', 'hidden': botonActivo === 'pacientes'}" (click)="cambiarBotonActivo('pacientes')">
+      <button class="nav-button pacientes"><i class="fas fa-procedures fa-4x"></i></button>
+      <span>Portal Paciente</span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,118 @@
+/* Estilo para el contenedor principal del historial clínico */
+.paciente-info {
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  h2 {
+    margin: 10px 10px 0 15px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  label {
+    display: flex;
+    align-items: center;
+  }
+  
+  .edicion-info {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 60px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .edicion-info input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-left: 10px;
+  }
+  
+  .btn-cancelar,
+  .btn-guardar {
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .btn-cancelar {
+    background-color: #ff6347;
+  }
+  
+  .btn-guardar {
+    background-color: #2ecc71;
+  }
+  
+  .btn-cancelar:hover {
+    background-color: #ff483a;
+  }
+  
+  .btn-guardar:hover {
+    background-color: #27ae60;
+  }
+  
+  .btn-activar-edicion {
+    background-color: #3498db;
+    color: white;
+    border: 1px solid #2980b9;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn-activar-edicion:hover {
+    background-color: #2980b9;
+  }
+  
+  .obra-social-toggle button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .obra-social-toggle button.selected {
+    border: 2px solid #3498db;
+  }
+  
+  .btn-si:hover,
+  .btn-no:hover {
+    opacity: 0.8;
+  }
+  
+  .metricas-list li {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .metricas-list li p strong {
+    font-weight: bold;
+  }
+  
+  #noData {
+    color: #999;
+    font-style: italic;
+  }
+  .btn-toggle-historial {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 0;
+  }

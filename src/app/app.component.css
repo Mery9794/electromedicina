@@ -1,0 +1,30 @@
+/* Establece que el body ocupe al menos toda la altura de la pantalla */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* El contenedor general tiene flex para empujar el footer al fondo */
+.wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la ventana */
+}
+
+/* El contenido central se expande según el contenido, pero empuja el footer hacia abajo si es necesario */
+.container {
+  flex-grow: 1; /* Se expande para ocupar el espacio disponible */
+}
+
+/* Footer ocupa el ancho completo y queda al pie de la página */
+app-footer {
+  background-color: #293849;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+}

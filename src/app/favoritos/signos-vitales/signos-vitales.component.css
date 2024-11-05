@@ -1,0 +1,155 @@
+/* Estilos para el contenedor principal */
+.signos-vitales-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 71px;
+  padding: 40px;
+  background: linear-gradient(to bottom, #00bce2 37%, #0195b9 0%);
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #fff; /* Cambiar color del texto a blanco */
+}
+
+/* Estilos para la información del paciente y la métrica fija */
+.patient-info {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.patient-info h2 {
+  color: #fff; /* Asegurar color del texto blanco */
+}
+
+.metric-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0; /* Añadir margen superior e inferior */
+}
+
+/* Ajustes para la vista del carrusel */
+.carousel-item {
+  background: inherit; /* Hereda el fondo del contenedor principal */
+  padding: 20px; /* Ajusta el relleno para que sea consistente */
+  border-radius: 5px; /* Aplica el mismo radio de borde */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff; /* Asegurar color del texto blanco */
+}
+
+/* Estilos para los días */
+.days {
+  display: flex;
+  overflow-x: auto;
+  margin-bottom: 20px;
+  background: inherit; /* Hereda el fondo del contenedor principal */
+  color: #fff; /* Asegurar color del texto blanco */
+}
+
+.day-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10px; /* Agrega padding horizontal */
+}
+
+.day-metric {
+  display: grid;
+  justify-items: center;
+  color: #fff; /* Asegurar color del texto blanco */
+}
+
+.temp-info p {
+  margin: 5px 0;
+  color: #fff; /* Asegurar color del texto blanco */
+}
+
+.icon-selector {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.icon-button {
+  background-color: #34aac8;
+  color: #fff; /* Asegurar color del texto blanco */
+  border: none;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.icon-button:hover {
+  background-color: #3bc3e5;
+}
+
+.days .day {
+  margin-bottom: 20px;
+  color: #fff; /* Asegurar color del texto blanco */
+}
+
+span.metric-value {
+  padding-top: 20px;
+  color: #fff; /* Asegurar color del texto blanco */
+}
+
+/* Define los colores de los iconos según el valor de la métrica */
+.fas.fa-thermometer-half.danger {
+  color: red;
+}
+
+.fas.fa-thermometer-half.warning-low {
+  color: orange;
+}
+
+.fas.fa-gauge.danger {
+  color: red;
+}
+
+.fas.fa-gauge.warning-low {
+  color: orange;
+}
+
+.fas.fa-tint.danger {
+  color: red;
+}
+
+.fas.fa-tint.warning-low {
+  color: orange;
+}
+
+/* Estilos para las flechas */
+.arrow {
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+  margin: 0 10px;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.arrow:hover {
+  opacity: 1;
+}
+
+/* Estilos para la vista de la gráfica */
+.chart-container {
+  width: 100%;
+  background: inherit; /* Hereda el fondo del contenedor principal */
+  color: #fff; /* Asegurar color del texto blanco */
+}
+
+.graph-view {
+  width: 100%;
+  height: 300px;
+  display: none; /* Oculta la vista de la gráfica por defecto */
+}
+
+.graph-view.active {
+  display: block; /* Muestra la vista de la gráfica cuando está activa */
+}

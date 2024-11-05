@@ -1,0 +1,141 @@
+/* Estilos para el logotipo o título */
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #fff;
+  text-align: center;
+}
+
+/* Estilos para la barra de botones */
+.slotlet.slotlet_horizontal_menu {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.navbar-links {
+  background-color: #0195b9;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  color: white;
+}
+
+/* Estilos para los botones de navegación */
+.icon-selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;  /* Centrar verticalmente */
+  margin-top: 40px;
+}
+
+.nav-button {
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin: 0 50px;  /* Aumentar el espacio entre los botones */
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.navbar-links h1 {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, margin 0.3s ease;
+  margin-top: 110px;
+  margin-bottom: 130px;
+}
+
+.nav-item span {
+  margin-top: 10px;
+  font-size: 30px;
+  text-align: center;
+  transition: transform 0.3s ease, margin 0.3s ease;
+}
+
+.nav-button i {
+  font-size: 48px;  /* Aumentar el tamaño de los iconos */
+}
+
+/* Estilos para cuando los botones están achicados */
+.small-icons .nav-button {
+  transform: scale(0.45);  /* Reducir el tamaño al 50% */
+  margin: -40px 10px;  /* Reducir el margen para ajustarlo mejor */
+}
+.small-icons .nav-item {
+  margin-top: -10px;  /* Reducir el texto para ajustarlo mejor */
+  margin-bottom: -1px;
+  transform: translateY(-6px);
+}
+.small-icons .nav-item span {
+  font-size: 14px;
+}
+
+/* Colores específicos para cada botón */
+.nav-button.admi {
+  background-color: #c37041; /* Color específico para Portal Administrativo */
+}
+
+.nav-button.medicos {
+  background-color: #41adc3; /* Color específico para Portal Médico */
+}
+
+.nav-button.pacientes {
+  background-color: #41c362; /* Color específico para Portal Paciente */
+}
+
+/* Estilos para los botones al pasar el mouse */
+.nav-button.admi:hover {
+  background-color: #a05b33; /* Color más oscuro para Portal Administrativo */
+}
+
+.nav-button.medicos:hover {
+  background-color: #3194a3; /* Color más oscuro para Portal Médico */
+}
+
+.nav-button.pacientes:hover {
+  background-color: #31994a; /* Color más oscuro para Portal Paciente */
+}
+
+/* Estilos dinámicos para la barra de navegación */
+.navbar-links.admi {
+  background-color: #c37041;
+}
+
+.navbar-links.medicos {
+  background-color: #41adc3;
+}
+
+.navbar-links.pacientes {
+  background-color: #41c362;
+}
+
+/* Ocultar botón seleccionado */
+.hidden {
+  display: none;
+}

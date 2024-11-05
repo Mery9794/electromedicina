@@ -1,0 +1,219 @@
+/* Estilos para la barra superior */
+.w3-bar {
+    background-color: #293849;
+    /* Fondo azul */
+    color: #fff;
+    /* Texto en color blanco */
+    padding: 10px;
+  }
+  
+  .container,
+  .container-sm {
+    max-width: none;
+  }
+  
+  /* Estilos para la barra de botones */
+  .container {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    /* Ocupar todo el ancho de la pantalla */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ddffff;
+  }
+  
+  .right-buttons {
+    display: flex;
+  }
+  
+  /* Estilos para los botones de navegación */
+  .nav-button,
+  button.w3-bar-item2.w3-input {
+    background-color: #ddffff;
+    /* Fondo celeste predeterminado */
+    color: #000;
+    /* Texto en color negro predeterminado */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    /* Transición suave para el cambio de color de fondo */
+  }
+  .boton, button.w3-bar-item.w3-button.tablink {
+    background-color: #ffffff;
+    color: #000;
+    /* Texto en color negro predeterminado */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block;
+    width: 100%; /* Asegura que el botón ocupe todo el ancho */
+  }
+  
+  .boton:hover {
+    background-color: #6ec0c0;
+  }
+  
+  .boton.active {
+    background-color: #779b9b;
+    color: #fff;
+  }
+  
+  .boton.active:hover {
+    background-color: #6ec0c0;
+  }
+  
+  
+  /* Estilos para los botones de navegación cuando se pasa el mouse sobre ellos */
+  .nav-button:hover {
+    background-color: #6ec0c0;
+    /* Fondo celeste más claro al pasar el mouse */
+  }
+  
+  /* Estilos para los botones de navegación cuando están activos (seleccionados) */
+  .nav-button.active {
+    background-color: #779b9b;
+    /* Fondo celeste más oscuro para el botón activo */
+    color: #fff;
+    /* Texto en color blanco para el botón activo */
+  }
+  
+  /* Estilos para los botones de navegación activos cuando se pasa el mouse sobre ellos */
+  .nav-button.active:hover {
+    background-color: #6ec0c0;
+    /* Fondo aún más oscuro al pasar el mouse sobre el botón activo */
+  }
+  
+  .container input {
+    margin-left: 5px;
+    /* Espacio entre el botón de búsqueda y el campo de búsqueda */
+  }
+  
+  /* Estilo general para los botones de navegación */
+  .w3-bar-item {
+    margin-right: 10px;
+    /* Espacio entre los botones de navegación */
+    background-color: transparent;
+    /* Fondo transparente */
+    transition: background-color 0.3s;
+    /* Transición de color al hacer clic */
+    cursor: pointer;
+    /* Cambia el cursor al pasar por encima */
+    border: none;
+    /* Elimina el borde del botón */
+    font-size: 16px;
+    padding: 4px 5px;
+    /* Ajusta el espaciado del botón según sea necesario */
+    border-radius: 2px;
+    /* Bordes redondeados */
+  }
+  
+  h3.w3-bar-item1.w3-right {
+    margin-bottom: 0px;
+    display: flex;
+    align-items: center;
+  }
+  
+  
+  .menu-toggle {
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+  }
+  
+  .menu {
+    display: none;
+  }
+  
+  .menu.open {
+    display: flex;
+  }
+  
+  /* Ajustes para el menú desplegable en dispositivos de escritorio */
+  .dropdown {
+    position: static;
+    display: inline-block;
+  }
+  
+  .dropdown-menu {
+    right: 0;
+    left: auto;
+    /* Ajuste para que esté alineado a la derecha */
+    max-height: 100vh;
+    /* Limitar la altura del menú al alto de la ventana */
+  
+  }
+  
+  
+  /* Estilos adicionales para dispositivos móviles */
+  @media (max-width: 767px) {
+  
+    /* Ocultar la barra de navegación principal en dispositivos móviles */
+    .left-buttons,
+    .right-buttons {
+      display: none;
+    }
+  
+    /* Mostrar el menú y ajustar el espacio entre elementos */
+    .mobile-menu-toggle {
+      display: flex;
+      margin-left: 5px;
+      align-items: center;
+      margin-right: 5px;
+    }
+  
+    .mobile-menu {
+      position: fixed;
+      /* Cambiado a fixed para que se mantenga fijo en la pantalla */
+      top: 60px;
+      /* Ajusta según sea necesario para la altura de tu barra superior */
+      right: 0;
+      /* Alinea el menú a la derecha */
+      background-color: #fff;
+      /* Fondo blanco para resaltar el menú */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      /* Sombra para dar profundidad al menú */
+      display: none;
+      /* Oculta el menú por defecto */
+      z-index: 1000;
+      /* Valor alto para que esté sobre otros elementos */
+    }
+  
+    .desktop-bar {
+      display: none;
+    }
+  
+    .desktop-nav {
+      display: none;
+    }
+  
+    /* Ajustes para los elementos del menú en dispositivos móviles */
+    .mobile-menu .nav-button {
+      width: 100%;
+      text-align: left;
+      /* Alinea el texto a la izquierda */
+      padding: 10px 20px;
+      /* Aumenta el espacio de relleno para un mejor aspecto */
+      margin: 0;
+      border: none;
+      transition: background-color 0.3s;
+    }
+  
+    /* Estilos adicionales para el botón activo en dispositivos móviles */
+    .mobile-menu .nav-button.active {
+      background-color: #779b9b;
+      color: #fff;
+    }
+  
+    /* Estilo para mostrar el menú cuando está abierto */
+    .mobile-menu.open {
+      display: block;
+    }
+  
+  
+  }

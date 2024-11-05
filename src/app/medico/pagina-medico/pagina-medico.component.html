@@ -1,0 +1,45 @@
+<!-- Agrega un contenedor principal para todo el contenido -->
+<div class="w3-container">
+
+    <!-- Barra azul superior para PC -->
+    <div class="w3-bar w3-blue d-flex justify-content-between desktop-bar">
+      <h1 class="w3-bar-item1 w3-left">Profesional: {{ usuario.apellido }},{{ usuario.nombre }}</h1>
+      <h3 class="w3-bar-item1 w3-right">{{ saludo }}</h3>
+    </div>
+  
+    <!-- Botones de Navegación -->
+    <div class="container">
+      <div class="left-buttons">
+        <button class="nav-button" [ngClass]="{'active': botonActivo === 'Inicio'}"
+          (click)="cambiarPestana('Inicio')">Inicio
+          <i class="fas fa-home"></i>
+        </button>
+        <button class="nav-button" [ngClass]="{'active': botonActivo === 'Mapeo'}" (click)="cambiarPestana('Mapeo')">Mapeo
+          <i class="fa-solid fa-map-location-dot"></i>
+        </button>
+        <button class="nav-button" [ngClass]="{'active': botonActivo === 'Registro'}"
+          (click)="cambiarPestana('Registro')">Registro Paciente
+          <i class="fas fa-info-circle"></i>
+        </button>
+      </div>
+  
+        <button class="w3-bar-item w3-button tablink w3-right" (click)="cerrarSesion()">Cerrar
+          <i class="fas fa-sign-out-alt"></i>
+        </button>
+      </div>
+    </div>
+  
+    <!-- Visualización de las pestañas -->
+  
+    <div id="Inicio" class="w3-container sec" [style.display]="pestanasVisible.Inicio ? 'block' : 'none'">
+      <app-home-medico></app-home-medico>
+    </div>
+  
+    <div id="Mapeo" class="w3-container sec" [style.display]="pestanasVisible.Mapeo ? 'block' : 'none'">
+      <app-mapa></app-mapa>
+    </div>
+  
+    <!-- Boton Registrarse -->
+    <div id="Registro" class="w3-container sec" [style.display]="pestanasVisible.Registro ? 'block' : 'none'">
+      <app-registro-paciente></app-registro-paciente>
+    </div>

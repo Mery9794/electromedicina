@@ -1,0 +1,15 @@
+<div *ngIf="apiLoaded | async; else loading">
+  <google-map [center]="center" [zoom]="zoom">
+    <map-marker *ngFor="let marker of markers; let i = index"
+                [position]="marker.position!"
+                [title]="marker.title"
+                (mapClick)="onMarkerClick(marker, pacientes[i])">
+    </map-marker>
+    <map-info-window>{{ infoContent }}</map-info-window>
+  </google-map>
+</div>
+<ng-template #loading>
+  <p>Loading map...</p>
+</ng-template>
+
+  

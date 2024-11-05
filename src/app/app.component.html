@@ -1,0 +1,12 @@
+<body class="w3-pale-blue">
+  <div class="wrapper">
+    <!-- Navbar-->
+    <app-navbar *ngIf="!esPaginaPaciente && !esPaginaRegistroPaciente && !esPaginaMedico && !esPaginaRegistroMedico && !esPaginaAdmin && !esPaginaHistorial && !esPaginaSignosVitales"></app-navbar>
+    
+    <!-- Contenido entre el navbar y el footer -->
+    <router-outlet></router-outlet>
+    
+    <!-- Footer  -->
+    <app-footer *ngIf="!esPaginaSignosVitales"></app-footer>
+  </div>
+</body>

@@ -1,0 +1,53 @@
+<div class="Inicio">
+    <div class="tituloSectionPaciente">
+        <h2 class="tituloPacienteH2">Cuidando la vida con la misma pasión</h2>
+    </div>
+
+    <div class="cuadrosPc">
+        <img src="assets/img/src/foto-medica.jpg" class="d-block w-100" alt="...">
+        <div class="flex-container-paciente2">
+
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <i class="fa-solid fa-children" style="color: #3c9a87;"></i>
+                    <p>Medicos totales: {{ contador }} </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="lista">
+        <div class="boton">
+            <h2>Lista de Medicos</h2>
+        </div>
+
+        <div class="tarjetas row">
+            <div *ngFor="let medico of medicos" class="tarjeta col-md-6 mb-4">
+                <div class="card">
+                    <img src="assets/img/src/icono-medico.png" class="card-img-top" alt="Icono Médico" >
+                    <div class="card-body">
+                        <h5 class="card-title mb-0">Dr/Dra: {{medico.apellido}} {{medico.nombre}}</h5>
+                        <p class="card-text">Email: {{medico.email}}</p>
+                        <div class="d-flex justify-content-end">
+                            <button class="btn btn-primary mr-2" (click)="verPerfil(medico)">Ver Perfil</button>
+                            <button class="btn btn-danger" (click)="darDeBaja(medico)">Dar de Baja</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="ventanaFlotanteVisible && medicoSeleccionado" class="overlay" id="popup">
+            <form action="" id="popupBody">
+                <span class="cerrar" id="cerrar" (click)="cerrarVentanaFlotante()">&times;</span>
+                <div class="container">
+                    <p class="cp">Perfil Medico: {{medicoSeleccionado.apellido}} {{medicoSeleccionado.nombre}}</p>
+                    <div >Nombre y apellido completo: {{medicoSeleccionado.apellido}} {{medicoSeleccionado.nombre}}</div>
+                    <div >Documento: {{medicoSeleccionado.dni}}</div>
+                    <div >Fecha de nacimiento: {{medicoSeleccionado.fechaNacimiento}}</div>
+                    <div >Genero: {{medicoSeleccionado.sexo}}</div>
+                    <div >Teléfono: {{medicoSeleccionado.telefono}}</div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

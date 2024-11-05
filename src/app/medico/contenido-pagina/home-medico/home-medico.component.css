@@ -1,0 +1,76 @@
+.cuadrosPc {
+
+  /* Establece la imagen como fondo */
+  text-align: center;
+  position: relative;
+  width: 100%;
+}
+
+.Inicio {
+  background-color: #ffffff; /* Color gris claro para el fondo */
+} 
+
+.flex-container-paciente2 {
+  padding: 20px;
+  /* Ajusta el relleno según sea necesario */
+  top: 0;
+  display: flex;
+}
+
+app-add-favs {
+  justify-content: space-between;
+  /* Puedes ajustar esto según sea necesario */
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+  z-index: 1;
+  /* Asegura que esté sobre la imagen */
+
+}
+
+/* Estilos para los cuadros de contenido */
+.card {
+  background: rgba(255, 255, 255, 0.8);
+  /* Fondo blanco transparente para los cuadros */
+  border: 1px solid #ccc;
+  /* Borde alrededor de los cuadros */
+  margin: 10px;
+  /* Espaciado entre los cuadros */
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+  color: rgb(8, 8, 8);
+}
+
+.d-block.w-100 {
+  width: 100%;
+  height: auto;
+}
+
+/* Establecer un estilo para la imagen principal */
+.cuadrosPc img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Ajustes para .flex-container-paciente2 y app-add-favs en dispositivos móviles */
+@media (max-width: 767px) {
+  .flex-container-paciente2 {
+    display: flex;
+  }
+
+  .card {
+    flex: 1 0 48%;
+    margin: 1%;
+    font-size: 0.7em;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  app-add-favs {
+    top: 140px;
+  }
+
+}

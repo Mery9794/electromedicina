@@ -1,0 +1,117 @@
+/* Estilos para los campos de entrada */
+.w3-input {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+/* Estilos para los labels */
+.w3-text-blue {
+    color: #2196F3;
+}
+
+/* Estilos para la imagen */
+.card-body img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Estilos para el contenedor del formulario */
+.card-body {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card {
+    --bs-card-spacer-y: -1rem;
+}
+
+.row {
+    flex-wrap: wrap;
+    align-items: center;
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* Ajustar el margen izquierdo del contenedor */
+.flex-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Estilos adicionales para dispositivos móviles */
+@media (max-width: 767px) {
+    .card-body {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .card-body img {
+        margin-top: 20px;
+    }
+
+    .w3-input {
+        margin-bottom: 10px;
+    }
+    
+}
+
+/* Resto de tus estilos permanecen iguales */
+
+.d-block.w-100 {
+    max-width: 100%;
+    height: auto;
+}
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: visible;
+    /* Este valor se cambió de hidden a visible */
+    opacity: 1;
+    /* Este valor se cambió de 0 a 1 */
+}
+
+#popup:target {
+    visibility: hidden;
+    /* Se regresa a hidden para ocultar */
+    opacity: 0;
+    /* Se regresa a o para hacerlo "invisible" */
+}
+
+#popupBody {
+    width: 50%;
+    padding: 3%;
+    border-radius: 15px;
+    box-shadow: 0 0 5px #CCC;
+    background: #FFF;
+    position: relative;
+    margin: 10% auto;
+    transition: all 5s ease-in-out;
+}
+
+#cerrar {
+    position: absolute;
+    top: -2px;
+    right: 18px;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #F00;
+    transition: all 200ms;
+}
+

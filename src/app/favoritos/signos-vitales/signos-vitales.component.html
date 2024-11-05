@@ -1,0 +1,111 @@
+<div class="signos-vitales-container">
+  <!-- Información del Paciente -->
+  <div class="patient-info">
+    <h2>Métrica de: {{ paciente?.apellido }} {{ paciente?.nombre }}</h2>
+    <div class="metric-info" *ngIf="selectedIcon === 'Temperatura'">
+      <div class="icon-temp">
+        <i class="fas fa-thermometer-half fa-4x"></i>
+      </div>
+      <h2>{{ currentTemperature }}°C</h2>
+    </div>
+    <div class="metric-info" *ngIf="selectedIcon === 'Presión Arterial'">
+      <div class="icon-pressure">
+        <i class="fa-solid fa-heart-pulse fa-4x"></i>
+      </div>
+      <h2>{{ currentPressure }} mmHg</h2>
+    </div>
+    <div class="metric-info" *ngIf="selectedIcon === 'Oxigeno'">
+      <div class="icon-oxygen">
+        <i class="fas fa-tint fa-4x"></i>
+      </div>
+      <h2>{{ currentOxygen }} ppm</h2>
+    </div>
+  </div>
+
+  <!-- Carrusel de Métricas -->
+  <div id="carouselExampleFade" class="carousel slide carousel-fade">
+    <div class="carousel-inner">
+      <!-- Vista de Métricas Diarias -->
+      <div class="carousel-item active">
+        <div class="days" *ngIf="selectedIcon === 'Temperatura'">
+          <ng-container *ngFor="let day of days">
+            <div class="day-wrapper">
+              <p class="day">{{ day }}</p>
+              <div class="day-metric">
+                <i [ngClass]="{
+                    'fas fa-thermometer-half': +getMetricValue(day, 'Temperatura') >= 36 && +getMetricValue(day, 'Temperatura') <= 37.5,
+                    'fas fa-thermometer-half danger': +getMetricValue(day, 'Temperatura') < 36 || +getMetricValue(day, 'Temperatura') > 37.5,
+                    'fas fa-thermometer-half warning-low': +getMetricValue(day, 'Temperatura') < 37
+                  }"></i>
+                <span class="metric-value">{{ getMetricValue(day, 'Temperatura') }}°C</span>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+
+        <div class="days" *ngIf="selectedIcon === 'Presión Arterial'">
+          <ng-container *ngFor="let day of days">
+            <div class="day-wrapper">
+              <p class="day">{{ day }}</p>
+              <div class="day-metric">
+                <i [ngClass]="{
+                    'fas fa-gauge': +getMetricValue(day, 'Presión Arterial') >= 80 && +getMetricValue(day, 'Presión Arterial') <= 120,
+                    'fas fa-gauge danger': +getMetricValue(day, 'Presión Arterial') < 80 || +getMetricValue(day, 'Presión Arterial') > 120,
+                    'fas fa-gauge warning-low': +getMetricValue(day, 'Presión Arterial') < 80
+                  }"></i>
+                <span class="metric-value">{{ getMetricValue(day, 'Presión Arterial') }} mmHg</span>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+
+        <div class="days" *ngIf="selectedIcon === 'Oxigeno'">
+          <ng-container *ngFor="let day of days">
+            <div class="day-wrapper">
+              <p class="day">{{ day }}</p>
+              <div class="day-metric">
+                <i [ngClass]="{
+                    'fas fa-tint': +getMetricValue(day, 'Oxigeno') >= 95,
+                    'fas fa-tint danger': +getMetricValue(day, 'Oxigeno') < 95 && +getMetricValue(day, 'Oxigeno') >= 90,
+                    'fas fa-tint warning-low': +getMetricValue(day, 'Oxigeno') < 90
+                  }"></i>
+                <span class="metric-value">{{ getMetricValue(day, 'Oxigeno') }} ppm</span>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+
+      <!-- Vista de Diagramas de Métricas -->
+      <div class="carousel-item">
+
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <!-- Botones de Selección de Iconos -->
+  <div class="icon-selector">
+    <button class="icon-button" [ngClass]="getButtonClass('Temperatura')" (click)="selectIcon('Temperatura')">
+      <i class="fas fa-thermometer-half fa-2x"></i>
+    </button>
+    <button class="icon-button" [ngClass]="getButtonClass('Presión Arterial')" (click)="selectIcon('Presión Arterial')">
+      <i class="fa-solid fa-heart-pulse fa-2x"></i>
+    </button>
+    <button class="icon-button" [ngClass]="getButtonClass('Oxigeno')" (click)="selectIcon('Oxigeno')">
+      <i class="fas fa-tint fa-2x"></i>
+    </button>
+  </div>
+
+  <!-- Fecha Actual -->
+  <div class="current-date">
+    {{ currentDate | date: 'EEEE, d MMMM' }}
+  </div>
+</div>

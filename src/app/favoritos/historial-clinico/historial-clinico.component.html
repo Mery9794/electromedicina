@@ -1,0 +1,113 @@
+<div *ngIf="loading; else loadedContent">Cargando...</div>
+
+<ng-template #loadedContent>
+  <h2> Datos de {{ paciente?.apellido }} {{ paciente?.nombre }}
+    <button (click)="activarEdicionPaciente()" *ngIf="paciente && !edicionActivadaPaciente" class="btn-activar-edicion">
+      <i class="fas fa-pencil-alt"></i> Editar Paciente
+    </button>
+  </h2>
+
+  <div *ngIf="!edicionActivadaPaciente && paciente" class="paciente-info">
+    <p><strong>Nombre:</strong> {{ paciente.nombre }}</p>
+    <p><strong>Apellido:</strong> {{ paciente.apellido }}</p>
+    <p><strong>DNI:</strong> {{ paciente.dni }}</p>
+    <p><strong>Fecha de nacimiento:</strong> {{ paciente.fechaNacimiento | date: 'dd/MM/yyyy' }}</p>
+    <p><strong>Género:</strong> {{ paciente.sexo }}</p>
+    <p><strong>Edad:</strong> {{ paciente.edad }}</p>
+    <p><strong>Telefono:</strong> {{paciente.telefono}}</p>
+    <p><strong>Correo:</strong> {{paciente.email}} </p>
+    <p><strong>Obra Social:</strong> {{ paciente.tieneObraSocial ? paciente.nombreObraSocial: 'No tiene obra social' }}
+    </p>
+    <p><strong>Observaciones:</strong> {{ paciente.metricas && paciente.metricas.length > 0 ? paciente.metricas[0].obs : 'Sin observaciones' }}</p>
+ 
+      
+  </div>
+
+  <!-- Edición de información del paciente -->
+  <div *ngIf="edicionActivadaPaciente && paciente" class="edicion-info">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col">
+            <p><label>Nombre:<input type="text" [(ngModel)]="paciente.nombre"
+                  placeholder="{{ paciente.nombre }}"></label></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p><label>Apellido:<input type="text" [(ngModel)]="paciente.apellido"
+                  placeholder="{{ paciente.apellido }}"></label></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p><label>DNI:<input type="text" [(ngModel)]="paciente.dni" placeholder="{{ paciente.dni }}"></label></p>
+          </div>
+        </div> 
+        <div class="row">
+          <div class="col">
+            <p><label> Fecha de nacimiento:
+                <input type="text" class="form-control"
+                  placeholder="{{ paciente.fechaNacimiento | date: 'dd/MM/yyyy' }}"
+                  aria-describedby="fechaNacimientoIcon" name="fechaNacimiento" [(ngModel)]="paciente.fechaNacimiento">
+              </label></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p><label>Género:<input type="text" [(ngModel)]="paciente.sexo" placeholder="{{ paciente.sexo }}"></label>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p><label>Edad:<input type="text" [(ngModel)]="paciente.edad" placeholder="{{ paciente.edad }}"></label></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p><label>Telefono:<input type="text" [(ngModel)]="paciente.telefono" placeholder="{{ paciente.telefono }}"></label>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p><label>Correo:<input type="text" [(ngModel)]="paciente.email" placeholder="{{ paciente.email }}"></label>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div *ngIf="paciente.tieneObraSocial !== undefined" class="obra-social-toggle">
+              <p><label>Tiene obra social:
+                  <button class="btn-si" [class.selected]="paciente.tieneObraSocial" (click)="toggleObraSocial(true)">
+                    Sí
+                  </button>
+                  <button class="btn-no" [class.selected]="!paciente.tieneObraSocial" (click)="toggleObraSocial(false)">
+                    No
+                  </button></label></p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <ng-container *ngIf="paciente.tieneObraSocial">
+              <p><label>Nombre de la Obra Social: <input type="text" [(ngModel)]="paciente.nombreObraSocial"
+                    placeholder="{{ paciente.nombreObraSocial }}"></label></p>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <button (click)="cancelarEdicion()" class="btn-cancelar">Cancelar</button>
+        <button (click)="guardarCambios()" class="btn-guardar">Guardar Cambios</button>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #noData>
+    <p>No hay datos disponibles para mostrar.</p>
+  </ng-template>
+</ng-template>

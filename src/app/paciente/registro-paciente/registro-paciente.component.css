@@ -1,0 +1,24 @@
+.card-body {
+    flex-direction: column;
+    min-height: 400px; /* Define una altura mínima para el formulario */
+    padding-bottom: 10px;
+  }
+  
+  /* Ajusta el tamaño de las partes para que ocupen el mismo espacio */
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+ 
+  .parte-formulario {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100%; /* Para que cada parte tenga la altura total */
+  }
+  /* El contenido central se expande según el contenido, pero empuja el footer hacia abajo si es necesario */
+.container {
+    flex-grow: 1; /* Se expande para ocupar el espacio disponible */
+  }
+  

@@ -1,0 +1,84 @@
+/* Estilos para la barra superior */
+.w3-bar { 
+    background-color: #293849 ; /* Fondo azul */
+    color: #fff; /* Texto en color blanco */
+    padding: 10px;
+  }
+
+  /* component.css */
+  .container,
+  .container-sm {
+    max-width: none;
+  }
+
+  /* Estilos para la barra de botones */
+  .container {
+    padding: 0;
+    margin: 0;
+    width: 100%; /* Ocupar todo el ancho de la pantalla */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:#8c8c8c;
+  }
+
+.right-buttons {
+    display: flex;
+}
+/* Estilos para los botones de navegación */
+.nav-button, button.w3-bar-item.w3-button.tablink, button.w3-bar-item2.w3-input {
+  background-color: #8c8c8c; /* Fondo celeste predeterminado */
+  color: #000; /* Texto en color negro predeterminado */
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Transición suave para el cambio de color de fondo */
+}
+
+/* Estilos para los botones de navegación cuando se pasa el mouse sobre ellos */
+.nav-button:hover {
+  background-color: #666666; /* Fondo celeste más claro al pasar el mouse */
+}
+
+/* Estilos para los botones de navegación cuando están activos (seleccionados) */
+.nav-button.active {
+  background-color: #494949; /* Fondo celeste más oscuro para el botón activo */
+  color: #fff; /* Texto en color blanco para el botón activo */
+}
+
+/* Estilos para los botones de navegación activos cuando se pasa el mouse sobre ellos */
+.nav-button.active:hover {
+  background-color: #666666; /* Fondo aún más oscuro al pasar el mouse sobre el botón activo */
+}
+
+  .container input {
+    margin-left: 5px;
+    /* Espacio entre el botón de búsqueda y el campo de búsqueda */
+  }
+
+  /* Estilo general para los botones de navegación */
+  .w3-bar-item {
+    margin-right: 10px;
+    /* Espacio entre los botones de navegación */
+    background-color: transparent;
+    /* Fondo transparente */
+    transition: background-color 0.3s;
+    /* Transición de color al hacer clic */
+    cursor: pointer;
+    /* Cambia el cursor al pasar por encima */
+    border: none;
+    /* Elimina el borde del botón */
+    font-size: 16px;
+    padding: 4px 5px;
+    /* Ajusta el espaciado del botón según sea necesario */
+    border-radius: 2px;
+    /* Bordes redondeados */
+  }
+
+  h3.w3-bar-item1.w3-right {
+    margin-bottom: 0px;
+    display: flex;
+    align-items: center;
+  }
+

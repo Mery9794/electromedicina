@@ -1,0 +1,53 @@
+  /* Estilos para la barra superior */
+  .w3-bar {
+    background-color: #293849 ; /* Color de fondo azul */
+    color: #fff; /* Color del texto en la barra */
+    padding: 10px; /* Espacio interno */
+  }
+  
+  /* Estilos para los botones de navegación */
+  .w3-sidebar {
+    background-color: #f0f0f0; /* Color de fondo del panel de navegación */
+    width: 130px; /* Ancho del panel de navegación */
+    padding: 10px;
+  }
+  
+  .w3-bar-item {
+    font-weight: bold;
+  }
+  
+  /* Estilos para los detalles de cada botón */
+  .w3-container.sec {
+    margin-top: -230px; /* Espacio a la izquierda del contenido */
+    padding: 20px; /* Espacio interno */
+    border: 1px solid #ccc; /* Borde para dar un aspecto de tarjeta */
+    margin-left: 145px;
+  }
+  
+  
+  /* Estilo para resaltar el botón activo */
+  .w3-bar-item.active {
+    background-color: #007BFF; /* Color de fondo del botón activo */
+    color: #fff; /* Color del texto en el botón activo */
+  }
+  
+  /* Estilos para los botones de cerrar sesión y otros elementos */
+  .w3-sidebar button,
+  .w3-sidebar button:active,
+  .w3-sidebar button:focus {
+    width: 100%; /* Ancho completo */
+    margin-bottom: 10px;
+    background-color: #007BFF; /* Color de fondo de los botones */
+    color: #fff; /* Color del texto de los botones */
+  }
+  
+  /* Estilos para los detalles de cada botón */
+  .w3-container.sec h2 {
+    color: #007BFF; /* Color del título de la pestaña */
+    font-weight: bold;
+  }
+  
+  /* Estilos para los detalles de cada botón */
+  .w3-container.sec p {
+    font-size: 16px; /* Tamaño del texto en los detalles */
+  }

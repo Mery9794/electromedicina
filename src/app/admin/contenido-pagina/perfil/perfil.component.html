@@ -1,0 +1,18 @@
+<div id="user-profile" *ngIf="usuario$ | async as user">
+    <h1>{{ user.nombre }} {{ user.apellido }}</h1>
+    <div id="user-details">
+      <ul>
+        <li><strong>Email:</strong> {{ user.email }}</li>
+        <li><strong>Zona Horaria:</strong></li>
+        <li><strong>DNI:</strong> {{ user.dni }}</li>
+      </ul>
+    </div>
+    <div id="user-privacy">
+      <p><strong>Retención de datos:</strong> Resumen de retención de datos</p>
+      <p><strong>Políticas y acuerdos:</strong> Políticas y acuerdos</p>
+    </div>
+    <div id="user-activity">
+      <p><strong>Último acceso:</strong> </p>
+      <p><strong>App para escanear código Q:</strong> </p>
+    </div>
+  </div>

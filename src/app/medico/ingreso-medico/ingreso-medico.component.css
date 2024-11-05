@@ -1,0 +1,60 @@
+/* Estilo general para el formulario */
+.w3-table {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  height: 85vh; /* Para centrar verticalmente el formulario */
+  }
+  
+  .w3-card-2 {
+    width: 100%;
+    max-width: 450px;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    border-radius: 15px;
+  }
+  
+  .w3-card-2 .w3-container {
+    padding: 20px;
+    padding-top: 0px;
+  }
+  
+  /* Estilo para los campos de entrada */
+  .w3-input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #999;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+  }
+  
+  /* Estilo para los botones */
+  .w3-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .w3-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Estilo para el enlace "¿Olvidé mi contraseña?" */
+  .ps-blanco {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .ps-blanco:hover {
+    text-decoration: underline;
+  }
+  
+  

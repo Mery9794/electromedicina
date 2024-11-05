@@ -1,0 +1,82 @@
+/* Estilo general para el formulario administrativo */
+.admin-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  height: 85vh; /* Para centrar verticalmente el formulario */
+}
+
+.admin-card {
+  width: 100%;
+  max-width: 450px;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+  border-radius: 15px;
+}
+ 
+b {
+  color: black;
+}
+
+.admin-container {
+  padding: 20px;
+  padding-top: 0px;
+}
+
+/* Estilo para los campos de entrada */
+.admin-input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #999;
+  border-radius: 10px;
+  background-color: #f0f0f0;
+}
+
+/* Estilo para los botones */
+.admin-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.admin-btn-primary {
+  background-color: #3c9a87;
+  color: white;
+}
+
+.admin-btn-primary:hover {
+  background-color: #358373;
+}
+
+.admin-btn-secondary {
+  background-color: #3c9a87;
+  color: white;
+}
+
+.admin-btn-secondary:hover {
+  background-color: #358373;
+}
+
+
+.admin-heading {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Estilo para el enlace "¿Olvidé mi contraseña?" */
+.admin-container a {
+  text-decoration: none;
+  color: #4a148c;
+}
+
+.admin-container a:hover {
+  text-decoration: underline;
+}
+
+  

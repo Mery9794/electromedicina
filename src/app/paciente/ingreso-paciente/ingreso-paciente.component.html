@@ -1,0 +1,87 @@
+<!-- INGRESO PACIENTES-->
+<div class="flex-container">
+    <div class="row justify-content-start">
+
+            <div class="card"> 
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <!-- Imagen al costado -->
+                            <img src="assets/img/src/imgdelogin1.jpg" class="d-block w-100" alt="Imagen de ejemplo">
+                        </div>
+                        <div class="col-md-4 d-flex flex-column align-items">
+                            <!-- FORMULARIO CON LOS BOTONES -->
+                            <h3 class="card-title text-center ml-auto">Ingreso al Personal Pacientes</h3>
+                            <form (submit)="ingresarPaciente()">
+                                <!-- Email -->
+                                <p>
+                                    <i class="fas fa-envelope"></i>
+                                    <label class="w3-text-blue"><b> Correo Electrónico:</b></label>
+                                    <br>
+                                    <input class="w3-input w3-pale-blue" name="email" [(ngModel)]="email" type="email"
+                                        placeholder="Correo Electrónico" required>
+                                </p>
+                                <!-- Contraseña -->
+                                <p>
+                                    <i class="fas fa-lock"></i>
+                                    <label class="w3-text-blue"><b> Contraseña:</b></label>
+                                    <br>
+                                    <input class="w3-input w3-pale-blue" name="password" [(ngModel)]="password"
+                                        type="password" placeholder="Contraseña" required>
+                                </p>
+                                <!-- boton ingresar y boton registar -->
+                                <div class="w3-row">
+                                    <!-- Boton Ingresar --> 
+                                    <div class="w3-half" style="width: 100%;">
+                                        <button class="btn btn-primary" routerLink="/pagina-del-paciente" type="submit"
+                                            id="btnEnviar" style="width: 100%;  margin-bottom: 10px;">Ingresar</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <!-- recuperar contraseña y contactenos -->
+                            <div class="form-group ps-margin-bottom-20">
+                                <div class="col-md-12">
+                                    <a class="ps-blanco font-14 m-l-xs" href="" target="_self">Recuperar Contraseña</a>
+                                    <span> |</span>
+                                    <a class="btn btn-link" (click)="mostrarContacto(true)">Contáctenos</a>
+                                </div>
+                            </div>
+
+                            <!-- Modal de contacto -->
+
+                            <div id="contactar" class="w3-modal w3-animate-opacity" [hidden]="!mostrarModalContacto">
+                                <div class="w3-modal-content">
+                                    <div class="overlay" id="popup">
+
+                                        <form action="" id="popupBody">
+                                            <p>
+                                                <label><b>Asunto:</b></label>
+                                                <input class="form-control" name="asunto" type="text"
+                                                    placeholder="Asunto" required>
+                                            </p>
+                                            <span (click)="mostrarContacto(false)" class="w3-button w3-display-topright"
+                                                id="cerrar">&times;</span>
+                                            <p>
+                                                <label><b>Correo Electrónico:</b></label>
+                                                <input class="form-control" name="correo" type="email"
+                                                    placeholder="Correo Electrónico" required>
+                                            </p>
+                                            <p>
+                                                <textarea class="form-control" rows="5"
+                                                    placeholder="Ingrese su mensaje en detalle." required></textarea>
+                                            </p>
+                                            <p class="text-center">
+                                                <button class="btn btn-primary" type="submit">Enviar Mensaje</button>
+                                            </p>
+                                        </form>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+</div>

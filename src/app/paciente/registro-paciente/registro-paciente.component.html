@@ -1,0 +1,119 @@
+<!-- registro-paciente -->
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Registro de Paciente</h3>
+  
+            <!-- Pestañas para navegar entre las partes del formulario -->
+            <ul class="nav nav-tabs">
+              <li class="nav-item">
+                <a class="nav-link" (click)="mostrarParte('datosGenerales')">Datos Generales</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" (click)="mostrarParte('contacto')">Contacto</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" (click)="mostrarParte('contrasena')">Contraseña</a>
+              </li>
+            </ul>
+  
+            <form [formGroup]="registroForm" (ngSubmit)="registrarPaciente()">
+              <!-- Parte 1: Datos Generales -->
+              <div *ngIf="parteVisible === 'datosGenerales'" class="parte-formulario">
+                <!-- Nombre -->
+                <div class="form-group">
+                  <label for="nombre">Nombre:</label>
+                  <input type="text" id="nombre" class="form-control" formControlName="nombre" placeholder="Nombre"
+                    required>
+                </div>
+                <!-- Apellido -->
+                <div class="form-group">
+                  <label for="apellido">Apellido:</label>
+                  <input type="text" id="apellido" class="form-control" formControlName="apellido" placeholder="Apellido"
+                    required>
+                </div>
+                <!-- DNI (Documento de Identidad Nacional) -->
+                <div class="form-group">
+                  <label for="dni">DNI:</label>
+                  <input type="text" id="dni" class="form-control" formControlName="dni" placeholder="DNI" required>
+                </div>
+                <!-- Fecha de Nacimiento -->
+                <div class="form-group">
+                  <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+                  <input type="date" id="fechaNacimiento" class="form-control" formControlName="fechaNacimiento"
+                    placeholder="Fecha de Nacimiento" required>
+                </div>
+                <!-- Sexo -->
+                <div class="form-group">
+                  <label>Sexo:</label>
+                  <div class="form-check">
+                    <input type="radio" id="sexoMasculino" class="form-check-input" formControlName="sexo"
+                      value="Masculino">
+                    <label class="form-check-label" for="sexoMasculino">Masculino</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" id="sexoFemenino" class="form-check-input" formControlName="sexo"
+                      value="Femenino">
+                    <label class="form-check-label" for="sexoFemenino">Femenino</label>
+                  </div>
+                </div>
+                <!-- Campos para Obra Social -->
+                  <div class="form-group">
+                    <label for="tieneObraSocial">¿Tiene Obra Social?</label>
+                    <input type="checkbox" id="tieneObraSocial" class="form-check-input"
+                      formControlName="tieneObraSocial">
+                  </div>
+                  <div class="form-group" *ngIf="registroForm.get('tieneObraSocial')?.value">
+                    <label for="nombreObraSocial">Nombre de la Obra Social:</label>
+                    <input type="text" id="nombreObraSocial" class="form-control" formControlName="nombreObraSocial"
+                      placeholder="Nombre de la Obra Social">
+                  </div>
+              </div>
+  
+              <!-- Parte 2: Contacto --> 
+              <div *ngIf="parteVisible === 'contacto'" class="parte-formulario">
+                <!-- Correo Electrónico -->
+                <div class="form-group">
+                  <label for="email">Correo Electrónico:</label>
+                  <input type="email" id="email" class="form-control" formControlName="email" placeholder="Email"
+                    required>
+                </div>
+                <!-- Teléfono -->
+                <div class="form-group">
+                  <label for="telefono">Teléfono:</label>
+                  <input type="tel" id="telefono" class="form-control" formControlName="telefono" placeholder="Teléfono"
+                    required>
+                </div>
+              </div>
+  
+              <!-- Parte 3: Contraseña -->
+              <div *ngIf="parteVisible === 'contrasena'" class="parte-formulario">
+                <!-- Contraseña -->
+                <div class="form-group">
+                  <label for="contrasena">Contraseña:</label>
+                  <input type="password" id="contrasena" class="form-control" formControlName="contrasena"
+                    placeholder="Contraseña" required>
+                </div>
+              </div>
+  
+              <!-- Botones para navegar entre las partes -->
+              <div class="d-flex justify-content-between mt-3">
+                <button type="button" class="btn btn-secondary" (click)="mostrarParteAnterior()"
+                  *ngIf="parteVisible !== 'datosGenerales'">Atrás</button>
+                <button type="button" class="btn btn-primary" (click)="mostrarParteSiguiente()"
+                  *ngIf="parteVisible !== 'contrasena'">Siguiente</button>
+                <button type="submit" class="btn btn-primary" *ngIf="parteVisible === 'contrasena'">Registrar</button>
+              </div>
+            </form>
+  
+  
+            <div *ngIf="registroExitoso" class="alert alert-success">
+              Se ha registrado correctamente.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
