@@ -36,6 +36,9 @@ Servicios de Autenticación y Gestión de Datos Médicos
 **Visualización en el Mapa**
 La aplicación incluye una sección de mapa donde se visualizan las ubicaciones de los pacientes registrados. La ubicación inicial representa el área donde fueron registrados, pero se actualizará automáticamente cuando se reciban datos de sensores. Esto permite monitorear la ubicación en tiempo real de cada paciente a través de dispositivos ESP32 conectados a sensores que miden temperatura, presión y niveles de oxígeno. Los datos de estos sensores se sincronizan con la aplicación, mostrando la última ubicación del paciente en el mapa en función de las lecturas de los dispositivos médicos.
 
+**Almacenamiento de Datos en Firebase**
+Para almacenar y sincronizar datos, se utilizó Firebase como base de datos en la nube, lo que permite un almacenamiento en tiempo real y seguro. Firebase facilita la gestión de datos de pacientes, profesionales de la salud y métricas de signos vitales, permitiendo a la aplicación reaccionar de inmediato a los cambios en los datos médicos y de ubicación. Además, Firebase Authentication se usa para el control de acceso de los diferentes tipos de usuarios.
+
 ## Notas finales
 El proyecto Electromedicina se encuentra en constante desarrollo, integrando nuevas funcionalidades para mejorar la experiencia del usuario y la administración de datos médicos.
 
